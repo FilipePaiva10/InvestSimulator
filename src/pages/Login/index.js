@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+import { useNavigation } from "@react-navigation/core";
+
 import { Platform } from "react-native";
 import stylesGuide from "../../../stylesGuide";
+import Button from "../../component/Button";
+import { ModalArea } from "../../component/modal/styled";
 import {
     LoginContainer,
     LoginSwitchArea,
@@ -22,36 +26,51 @@ import {
 
 export default () => {
 
+    const navigation = useNavigation();
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const [signIn, setSignIn] = useState(true);
     const [signUp, setSignUp] = useState(false);
+    const [activeModal, setActiveModal] = useState(false);
 
-    const handleSignInClick = () => {
+    const handleSignInSwitchClick = () => {
         setSignIn(true);
         setSignUp(false);
     }
 
 
-    const handleSignUpClick = () => {
+    const handleSignUpSwitchClick = () => {
         setSignIn(false);
         setSignUp(true);
     }
 
+    const handleSignInClick = () => {
+        
+        setTimeout(() => {
+            setActiveModal(false);
+            navigation.navigate('Home');
+        }, 1500);
+    }
+
+    const handleSignUpClick = () => {
+        alert('Realizou Cadastro');
+    }
+
     return (
-        <LoginContainer behavior={Platform.OS == 'ios' ? 'padding' : null}>
+        <LoginContainer>
             <LoginSwitchArea>
                 <LoginButtonArea
                     active={signIn}
-                    onPress={handleSignInClick}
+                    onPress={handleSignInSwitchClick}
                 >
                     <LoginButtonText>Login</LoginButtonText>
                 </LoginButtonArea>
                 <LoginButtonArea
                     active={signUp}
-                    onPress={handleSignUpClick}
+                    onPress={handleSignUpSwitchClick}
                 >
                     <LoginButtonText>Cadastrar</LoginButtonText>
                 </LoginButtonArea>
@@ -114,10 +133,22 @@ export default () => {
                 </LoginInput>
             </LoginInputArea>
             <LoginActionArea>
-                <ButtonArea>
-                    <ButtonText>{signIn ? 'Login' : 'Cadastrar'}</ButtonText>
-                </ButtonArea>
+                {signIn &&
+                    <Button
+                        handleClick={handleSignInClick}
+                        label='Login'
+                    />
+                }
+                {signUp &&
+                    <Button
+                        handleClick={handleSignUpClick}
+                        label='Cadastrar'
+                    />
+                }
             </LoginActionArea>
+            {activeModal &&
+                <ModalArea />
+            }
         </LoginContainer>
     )
 }

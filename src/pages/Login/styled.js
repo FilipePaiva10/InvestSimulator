@@ -77,16 +77,3 @@ export const LoginActionArea = styled.View`
     margin-top: 20px;
 `;
 
-export const ButtonArea = styled.TouchableOpacity`
-    background-color: ${stylesGuide.btn.bg.green};
-    padding: 15px;
-    border-radius: 16px;
-`;
-
-export const ButtonText = styled.Text`
-    color: ${stylesGuide.btn.color.greenColor};
-    font-size: 18px;
-    text-align: center;
-`;
-
-    
