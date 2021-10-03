@@ -1,12 +1,16 @@
 import React from 'react'
-import { SafeAreaView, Text } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
+
 
 export default () => {
 
   return (
-    <SafeAreaView>
-      <Text>InvestSimulator</Text>
-    </SafeAreaView>
+   <NavigationContainer>
+
+   </NavigationContainer>
   )
 
 }
+
+
+
