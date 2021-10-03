@@ -8,6 +8,8 @@ import {
     PreloadBgImage,
     PreloadTitle
 } from './styled'
+import { ActivityIndicator } from "react-native";
+import stylesGuide from "../../../stylesGuide";
 
 export default () => {
 
@@ -24,9 +26,13 @@ export default () => {
     
                         
     
-                    }, 1500)
+                    }, 2500)
                 } else {
-                    navigation.navigate("Login");
+                    setTimeout(() => {
+    
+                        navigation.navigate("Login");
+                        
+                    }, 1500)
                 }
     
             } catch (e) {
@@ -42,6 +48,7 @@ export default () => {
     return (
         <PreloadArea>
             <PreloadTitle>InvestSimulator</PreloadTitle>
+            <ActivityIndicator color={stylesGuide.colors.white} size="large" />
             <PreloadBgImage source={require("../../assets/img/Constelation.png")} />
         </PreloadArea>
     )

@@ -6,6 +6,7 @@ export const LoginContainer = styled.ScrollView`
     flex: 1;
     background-color: ${stylesGuide.bg.Primary}
     padding: 0 20px;
+    padding-top: 50px;
 `
 
 export const LoginSwitchArea = styled.View`
@@ -14,7 +15,6 @@ export const LoginSwitchArea = styled.View`
     border-radius: 10px;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 50px;
     padding: 10px;
 `;
 
@@ -62,6 +62,7 @@ export const InputTextArea = styled.View`
 `;
 export const Input = styled.TextInput`
     background-color: ${stylesGuide.bg.Secondy};
+    color: ${stylesGuide.colors.primary}
     border-radius: 12px;
     box-shadow: 0 4px 4px rgba(0,0,0,0.25);
     margin-top: 10px;
@@ -71,3 +72,21 @@ export const Input = styled.TextInput`
     border-color: #000;
     font-size: 16px;
 `;
+
+export const LoginActionArea = styled.View`
+    margin-top: 20px;
+`;
+
+export const ButtonArea = styled.TouchableOpacity`
+    background-color: ${stylesGuide.btn.bg.green};
+    padding: 15px;
+    border-radius: 16px;
+`;
+
+export const ButtonText = styled.Text`
+    color: ${stylesGuide.btn.color.greenColor};
+    font-size: 18px;
+    text-align: center;
+`;
+
+    

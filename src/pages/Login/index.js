@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import stylesGuide from "../../../stylesGuide";
 
+import { Platform } from "react-native";
+import stylesGuide from "../../../stylesGuide";
 import {
     LoginContainer,
     LoginSwitchArea,
@@ -12,11 +13,18 @@ import {
     InputTextArea,
     Input,
     Text,
-    TextBtn
+    TextBtn,
+    LoginActionArea,
+    ButtonArea,
+    ButtonText
 } from "./styled";
 
 
 export default () => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const [signIn, setSignIn] = useState(true);
     const [signUp, setSignUp] = useState(false);
@@ -33,7 +41,7 @@ export default () => {
     }
 
     return (
-        <LoginContainer>
+        <LoginContainer behavior={Platform.OS == 'ios' ? 'padding' : null}>
             <LoginSwitchArea>
                 <LoginButtonArea
                     active={signIn}
@@ -56,6 +64,8 @@ export default () => {
                             <Text>Nome</Text>
                         </InputTextArea>
                         <Input
+                            value={name}
+                            onChangeText={txt => setName(txt)}
                             placeholder="Entre com o nome"
                             placeholderTextColor={stylesGuide.colors.primary}
                         />
@@ -75,6 +85,8 @@ export default () => {
                         }
                     </InputTextArea>
                     <Input
+                        value={email}
+                        onChangeText={txt => setEmail(txt)}
                         placeholder="Entre com o email"
                         placeholderTextColor={stylesGuide.colors.primary}
                     />
@@ -93,12 +105,19 @@ export default () => {
                         }
                     </InputTextArea>
                     <Input
+                        value={password}
+                        onChangeText={txt => setPassword(txt)}
                         placeholder="Entre com a senha"
                         placeholderTextColor={stylesGuide.colors.primary}
                         secureTextEntry={true}
                     />
                 </LoginInput>
             </LoginInputArea>
+            <LoginActionArea>
+                <ButtonArea>
+                    <ButtonText>{signIn ? 'Login' : 'Cadastrar'}</ButtonText>
+                </ButtonArea>
+            </LoginActionArea>
         </LoginContainer>
     )
 }
