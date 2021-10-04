@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Platform } from "react-native";
 
 import { useNavigation } from "@react-navigation/core";
 
-import { Platform } from "react-native";
 import stylesGuide from "../../../stylesGuide";
 import Button from "../../component/Button";
-import { ModalArea } from "../../component/modal/styled";
+
 import {
     LoginContainer,
     LoginSwitchArea,
@@ -146,9 +146,9 @@ export default () => {
                     />
                 }
             </LoginActionArea>
-            {activeModal &&
+            {/* {activeModal &&
                 <ModalArea />
-            }
+            } */}
         </LoginContainer>
     )
 }

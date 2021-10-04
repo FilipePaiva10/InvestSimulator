@@ -13,7 +13,7 @@ export default () => {
             screenOptions={{
                 headerShown: false
             }}
-            initialRouteName="Preload"
+            initialRouteName="Home"
         >
             <MainStack.Screen name="Preload" component={Preload} />
             <MainStack.Screen name="Login" component={Login} />
