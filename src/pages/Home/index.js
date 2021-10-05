@@ -88,7 +88,6 @@ export default () => {
                         <CryptoItem />
                         <CryptoItem up={true} />
                         <CryptoItem />
-                        
                     </HomeResumeArea>
                 </ScrollView>
             </HomeContentArea>
