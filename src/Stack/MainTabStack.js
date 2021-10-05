@@ -1,15 +1,20 @@
 import React from 'react';
 
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import CustomTabBar from '../component/CustomTabBar';
+
 import Home from '../pages/Home';
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 export default () => {
     return (
-        <Tab.Navigator 
-            tabBar={props=> <CustomTabBar {...props}></CustomTabBar>}
-            initialRouteName="Home"
+        <Tab.Navigator
+            screenOptions={{
+                headerShown:false
+            }}
+            tabBar={props => <CustomTabBar {...props}></CustomTabBar>}
         >
             <Tab.Screen name="Home" component={Home} />
         </Tab.Navigator>
