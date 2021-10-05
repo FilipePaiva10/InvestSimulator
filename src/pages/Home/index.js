@@ -19,7 +19,8 @@ import {
 } from './styled';
 
 import { HeaderArea } from "../../component/Header/styled";
-import  CryptoItem  from "../../component/CryptoItem";
+import CryptoItem from "../../component/CryptoItem";
+import ThemeSwitcher from "../../component/ThemeSwitcher";
 
 export default () => {
 
@@ -41,7 +42,7 @@ export default () => {
             <HomeHeaderArea>
                 <HeaderImg source={require("../../assets/img/user.png")} />
                 <HeaderActions>
-                    <ActionItem>
+                    {/* <ActionItem>
                         <ActionImg source={require("../../assets/img/Search.png")} />
                     </ActionItem>
                     <ActionItem>
@@ -49,41 +50,47 @@ export default () => {
                     </ActionItem>
                     <ActionItem>
                         <ActionImg source={require("../../assets/img/Sin.png")} />
-                    </ActionItem>
+                    </ActionItem> */}
+                    <ThemeSwitcher/>
                 </HeaderActions>
             </HomeHeaderArea>
             <HomeContentArea>
-                <HomeSwitchArea>
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
-                        <HomeButtonArea
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <HomeSwitchArea>
+                        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
+                            <HomeButtonArea
 
-                        >
-                            <HomeButtonText>Convert</HomeButtonText>
-                        </HomeButtonArea>
-                        <HomeButtonArea
-                            active={true}
+                            >
+                                <HomeButtonText>Convert</HomeButtonText>
+                            </HomeButtonArea>
+                            <HomeButtonArea
+                                active={true}
 
-                        >
-                            <HomeButtonText>Spot</HomeButtonText>
-                        </HomeButtonArea>
-                        <HomeButtonArea
-
-
-                        >
-                            <HomeButtonText>Margin</HomeButtonText>
-                        </HomeButtonArea>
-                        <HomeButtonArea
+                            >
+                                <HomeButtonText>Spot</HomeButtonText>
+                            </HomeButtonArea>
+                            <HomeButtonArea
 
 
-                        >
-                            <HomeButtonText>Fiat</HomeButtonText>
-                        </HomeButtonArea>
-                    </ScrollView>
-                </HomeSwitchArea>
-                <HomeResumeArea>
-                    <CryptoItem
-                    />
-                </HomeResumeArea>
+                            >
+                                <HomeButtonText>Margin</HomeButtonText>
+                            </HomeButtonArea>
+                            <HomeButtonArea
+
+
+                            >
+                                <HomeButtonText>Fiat</HomeButtonText>
+                            </HomeButtonArea>
+                        </ScrollView>
+                    </HomeSwitchArea>
+                    <HomeResumeArea>
+                        <CryptoItem up={true} />
+                        <CryptoItem />
+                        <CryptoItem up={true} />
+                        <CryptoItem />
+                        
+                    </HomeResumeArea>
+                </ScrollView>
             </HomeContentArea>
         </HomeArea>
     )

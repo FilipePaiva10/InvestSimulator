@@ -1,3 +1,4 @@
+import { PROPERTY_TYPES } from "@babel/types";
 import React from "react";
 import {
     CryptoArea,
@@ -13,7 +14,7 @@ import {
 } from './styled';
 
 
-export default () => {
+export default (props) => {
     return (
         <CryptoArea>
             <InfoArea>
@@ -26,7 +27,10 @@ export default () => {
             <ImgArea source={require("../../assets/img/Uptrend.png")} />
             <StatisticsArea>
                 <Price>32,697.05</Price>
-                <Percent>+0,81%</Percent>
+                <Percent
+                    up={props.up}
+                >
+                    +0,81%</Percent>
             </StatisticsArea>
         </CryptoArea>
     )
