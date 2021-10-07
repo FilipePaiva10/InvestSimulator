@@ -1,11 +1,7 @@
+import dark from "./dark";
+import light from "./light";
+
 export default {
-    title: 'light',
-    bgColor: {
-        primary: '#1B232A',
-        secundary: '#161C22'
-    },
-    colors: {
-        primary: '#777777',
-        secondary: '#C1C7CD'
-    }
+    dark,
+    light
 }
