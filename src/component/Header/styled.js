@@ -8,7 +8,7 @@ export const HeaderArea = styled.View`
 `;
 
 
-export const HeaderImg = styled.Image`
+export const HeaderUserImg = styled.TouchableOpacity`
     width: 50px;
     height: 50px;
     border-radius: 25px;

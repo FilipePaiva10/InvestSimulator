@@ -19,19 +19,24 @@ export default (props) => {
     return (
         <CryptoArea>
             <InfoArea>
-                <ImgInfo source={{uri: props.data.img}} />
+                <ImgInfo source={props.data.img} />
                 <InfoLabelArea>
                     <Title>{props.data.title}</Title>
                     <Cod>{props.data.cod}</Cod>
                 </InfoLabelArea>
             </InfoArea>
-            <ImgArea source={require("../../assets/img/Uptrend.png")} />
+            {props.data.up &&
+                <ImgArea source={require("../../assets/img/Uptrend.png")} />
+            }
+            {!props.data.up &&
+                <ImgArea source={require("../../assets/img/Lowtrend.png")} />
+            }
             <StatisticsArea>
                 <Price>{props.data.price}</Price>
                 <Percent
                     up={props.data.up}
                 >
-                    {props.data.up ? `+${props.data.percent}`: `-${props.data.percent}`}</Percent>
+                    {props.data.up ? `+${props.data.percent}` : `-${props.data.percent}`}</Percent>
             </StatisticsArea>
         </CryptoArea>
     )

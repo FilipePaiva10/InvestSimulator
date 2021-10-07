@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/core";
-
 import { useLayoutEffect } from "react";
 
-import { Image, ScrollView, Text } from "react-native";
+import Icon from "react-native-vector-icons/Feather";
+
+import { ScrollView, Text } from "react-native";
 import {
     HomeArea,
     HomeSwitchArea,
@@ -12,26 +13,32 @@ import {
     HomeHeaderArea,
     HeaderImg,
     HeaderActions,
-    ActionItem,
-    ActionImg,
     HomeContentArea,
     HomeResumeArea,
-    AddItem
+    AddItem, 
+    HeaderUserImg
 } from './styled';
 
-import { HeaderArea } from "../../component/Header/styled";
 import CryptoItem from "../../component/CryptoItem";
 import ThemeSwitcher from "../../component/ThemeSwitcher";
 
-let resume = [
-    {title:'Bitcoin',cod:'BTC',img:'../../assets/img/Bitcoin.png',price: '280.143,78',percent: '75.32%'}
-]
+import useApi from '../../api';
 
 export default () => {
 
+    const api = useApi();
+
     const navigation = useNavigation();
 
-    const [resumeCryptos, setResumeCryptos] = useState(...resume);
+    const [theme, setTheme] = useState("Dark");
+    
+    const [resumeCryptos, setResumeCryptos] = useState([]);
+
+    useEffect(() => {
+
+        setResumeCryptos(api.getResumeCrypto());
+
+    }, []);
 
     useLayoutEffect(() => {
 
@@ -47,18 +54,15 @@ export default () => {
     return (
         <HomeArea>
             <HomeHeaderArea>
-                <HeaderImg source={require("../../assets/img/user.png")} />
+                <HeaderUserImg>
+                    < Icon
+                        name="user"
+                        size={30}
+                        color="#777"
+                    />
+                </HeaderUserImg>
                 <HeaderActions>
-                    {/* <ActionItem>
-                        <ActionImg source={require("../../assets/img/Search.png")} />
-                    </ActionItem>
-                    <ActionItem>
-                        <ActionImg source={require("../../assets/img/Mid.png")} />
-                    </ActionItem>
-                    <ActionItem>
-                        <ActionImg source={require("../../assets/img/Sin.png")} />
-                    </ActionItem> */}
-                    <ThemeSwitcher/>
+                    <ThemeSwitcher />
                 </HeaderActions>
             </HomeHeaderArea>
             <HomeContentArea>
@@ -91,13 +95,13 @@ export default () => {
                         </ScrollView>
                     </HomeSwitchArea>
                     <HomeResumeArea>
-                        {
-                            resume.map((item, key)=>(
-                                <CryptoItem key={key} data={item}/>
+                        {resumeCryptos.length > 0 &&
+                            resumeCryptos.map((item, key) => (
+                                <CryptoItem key={key} data={item} />
                             ))
                         }
-                        
-                        <AddItem><Text style={{color: '#FFF', fontSize: 18}}>Add To Favorite</Text></AddItem>
+
+                        <AddItem><Text style={{ color: '#FFF', fontSize: 18 }}>Add To Favorite</Text></AddItem>
                     </HomeResumeArea>
                 </ScrollView>
             </HomeContentArea>

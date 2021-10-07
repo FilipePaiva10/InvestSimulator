@@ -7,6 +7,7 @@ import {
     TabArea,
     TabItem,
     ItemText,
+    ItemImg
 } from './styled';
 
 export default () => {
@@ -14,44 +15,24 @@ export default () => {
         <BackTabArea>
             <TabArea>
                 <TabItem>
-                    <Icon
-                        name="home"
-                        size={30}
-                        color={stylesGuide.colors.secondy}
-                    />
-                    <ItemText>Home</ItemText>
+                    <ItemImg source={require("../../assets/img/buttons/HomeActive.png")} />
+                    <ItemText style={{color: '#FFF'}}>Home</ItemText>
                 </TabItem>
                 <TabItem>
-                    <Icon
-                        name="credit-card"
-                        size={30}
-                        color={stylesGuide.colors.secondy}
-                    />
+                    <ItemImg source={require("../../assets/img/buttons/MarketDefault.png")} />
                     <ItemText>Markets</ItemText>
                 </TabItem>
                 <TabItem>
-                    <Icon
-                        name="credit-card"
-                        size={30}
-                        color={stylesGuide.colors.secondy}
-                    />
-                    <ItemText>Markets</ItemText>
+                    <ItemImg source={require("../../assets/img/buttons/TradesDefault.png")} />
+                    <ItemText>Trades</ItemText>
                 </TabItem>
                 <TabItem>
-                    <Icon
-                        name="credit-card"
-                        size={30}
-                        color={stylesGuide.colors.secondy}
-                    />
-                    <ItemText>Markets</ItemText>
+                    <ItemImg source={require("../../assets/img/buttons/ActivityDefault.png")} />
+                    <ItemText>Activity</ItemText>
                 </TabItem>
                 <TabItem>
-                    <Icon
-                        name="credit-card"
-                        size={30}
-                        color={stylesGuide.colors.secondy}
-                    />
-                    <ItemText>Markets</ItemText>
+                    <ItemImg source={require("../../assets/img/buttons/WalletDefault.png")} />
+                    <ItemText>Wallets</ItemText>
                 </TabItem>
             </TabArea>
         </BackTabArea>

@@ -3,7 +3,7 @@ import stylesGuide from "../../../stylesGuide";
 
 
 export const BackTabArea = styled.View`
-    background-color: ${stylesGuide.bg.Primary};
+    background-color: #FFF;
     
 `
 
@@ -14,7 +14,7 @@ export const TabArea = styled.View`
     height: 60px;
     flex-direction: row;
     justify-content: center;
-    padding: 10px;
+    padding: 20px 5px;
 `;
 
 
@@ -25,10 +25,10 @@ export const TabItem = styled.TouchableOpacity`
 `;
 
 export const ItemText = styled.Text`
-    color: ${stylesGuide.colors.secondy}
+    color: ${stylesGuide.colors.secondy};
 `;
 
 export const ItemImg = styled.Image`
-
-
+    widht: 25px;
+    height: 25px;
 `;

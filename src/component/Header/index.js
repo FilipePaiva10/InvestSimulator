@@ -12,8 +12,7 @@ import {
 export default () => {
     return (
         <HeaderArea>
-            <HeaderImg source={require("../../assets/img/user.png")} />
-            <ActionText>sdsdssd</ActionText>
+            <HeaderUserImg></HeaderUserImg>
             <HeaderActions>
                 <ActionItem>
                     <ActionImg source={require("../../assets/img/search.png")} />

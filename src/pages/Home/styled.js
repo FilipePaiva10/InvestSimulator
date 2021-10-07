@@ -4,7 +4,7 @@ import stylesGuide from "../../../stylesGuide";
 
 export const HomeArea = styled.View`
     flex: 1;
-    background-color: ${stylesGuide.bg.Primary};
+    background-color: #FFF;
 `;
 
 export const HomeHeaderArea = styled.View`
@@ -15,10 +15,13 @@ export const HomeHeaderArea = styled.View`
 `;
 
 
-export const HeaderImg = styled.Image`
+export const HeaderUserImg = styled.TouchableOpacity`
     width: 36px;
     height: 36px;
     border-radius: 25px;
+    background-color: #DDD
+    justify-content: center;
+    align-items: center;
 `;
 
 
@@ -80,9 +83,10 @@ export const HomeResumeArea = styled.View`
 
 export const AddItem = styled.TouchableOpacity`
     margin-top: 10px;
-    border: 1px dashed #3E474F;
+    border: 1px dashed #777;
     align-items: center;
     justify-content: center;
     height: 60px;
     widht: 100%;
+    border-radius: 5px;
 `;
