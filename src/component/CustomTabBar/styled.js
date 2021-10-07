@@ -3,7 +3,7 @@ import stylesGuide from "../../../stylesGuide";
 
 
 export const BackTabArea = styled.View`
-    background-color: #FFF;
+    background-color: ${stylesGuide.bg.Primary};
     
 `
 

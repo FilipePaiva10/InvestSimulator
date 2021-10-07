@@ -4,7 +4,7 @@ import stylesGuide from "../../../stylesGuide";
 
 export const HomeArea = styled.View`
     flex: 1;
-    background-color: #FFF;
+    background-color:  ${stylesGuide.bg.Primary};
 `;
 
 export const HomeHeaderArea = styled.View`
@@ -19,7 +19,7 @@ export const HeaderUserImg = styled.TouchableOpacity`
     width: 36px;
     height: 36px;
     border-radius: 25px;
-    background-color: #DDD
+    background-color: ${stylesGuide.bg.Secondy}
     justify-content: center;
     align-items: center;
 `;
