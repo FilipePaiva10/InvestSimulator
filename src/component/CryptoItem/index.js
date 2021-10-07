@@ -15,22 +15,23 @@ import {
 
 
 export default (props) => {
+
     return (
         <CryptoArea>
             <InfoArea>
-                <ImgInfo source={require("../../assets/img/Bitcoin.png")} />
+                <ImgInfo source={{uri: props.data.img}} />
                 <InfoLabelArea>
-                    <Title>Bitcoin</Title>
-                    <Cod>BTC</Cod>
+                    <Title>{props.data.title}</Title>
+                    <Cod>{props.data.cod}</Cod>
                 </InfoLabelArea>
             </InfoArea>
             <ImgArea source={require("../../assets/img/Uptrend.png")} />
             <StatisticsArea>
-                <Price>32,697.05</Price>
+                <Price>{props.data.price}</Price>
                 <Percent
-                    up={props.up}
+                    up={props.data.up}
                 >
-                    +0,81%</Percent>
+                    {props.data.up ? `+${props.data.percent}`: `-${props.data.percent}`}</Percent>
             </StatisticsArea>
         </CryptoArea>
     )

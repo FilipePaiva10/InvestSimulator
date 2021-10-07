@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/core";
 
 import { useLayoutEffect } from "react";
@@ -15,16 +15,23 @@ import {
     ActionItem,
     ActionImg,
     HomeContentArea,
-    HomeResumeArea
+    HomeResumeArea,
+    AddItem
 } from './styled';
 
 import { HeaderArea } from "../../component/Header/styled";
 import CryptoItem from "../../component/CryptoItem";
 import ThemeSwitcher from "../../component/ThemeSwitcher";
 
+let resume = [
+    {title:'Bitcoin',cod:'BTC',img:'../../assets/img/Bitcoin.png',price: '280.143,78',percent: '75.32%'}
+]
+
 export default () => {
 
     const navigation = useNavigation();
+
+    const [resumeCryptos, setResumeCryptos] = useState(...resume);
 
     useLayoutEffect(() => {
 
@@ -84,10 +91,13 @@ export default () => {
                         </ScrollView>
                     </HomeSwitchArea>
                     <HomeResumeArea>
-                        <CryptoItem up={true} />
-                        <CryptoItem />
-                        <CryptoItem up={true} />
-                        <CryptoItem />
+                        {
+                            resume.map((item, key)=>(
+                                <CryptoItem key={key} data={item}/>
+                            ))
+                        }
+                        
+                        <AddItem><Text style={{color: '#FFF', fontSize: 18}}>Add To Favorite</Text></AddItem>
                     </HomeResumeArea>
                 </ScrollView>
             </HomeContentArea>

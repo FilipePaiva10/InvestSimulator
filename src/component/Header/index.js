@@ -5,7 +5,8 @@ import {
     HeaderArea,
     HeaderImg,
     HeaderActions,
-    ActionText
+    ActionText,
+    AddItem,
 } from './styled';
 
 export default () => {
@@ -17,6 +18,7 @@ export default () => {
                 <ActionItem>
                     <ActionImg source={require("../../assets/img/search.png")} />
                 </ActionItem>
+                <AddItem><Text>Add To Favorite</Text></AddItem>
             </HeaderActions>
         </HeaderArea>
     )

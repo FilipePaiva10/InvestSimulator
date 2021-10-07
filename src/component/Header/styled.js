@@ -41,3 +41,5 @@ export const ActionImg = styled.Image`
     border: 2px solid;
     border-color: #FFF;
 `;
+
+

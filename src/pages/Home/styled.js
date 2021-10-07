@@ -76,3 +76,13 @@ export const HomeButtonText = styled.Text`
 export const HomeResumeArea = styled.View`
 
 `;
+
+
+export const AddItem = styled.TouchableOpacity`
+    margin-top: 10px;
+    border: 1px dashed #3E474F;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    widht: 100%;
+`;
