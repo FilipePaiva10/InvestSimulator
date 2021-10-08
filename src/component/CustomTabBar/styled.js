@@ -3,13 +3,13 @@ import stylesGuide from "../../../stylesGuide";
 
 
 export const BackTabArea = styled.View`
-    background-color: ${stylesGuide.bg.Primary};
+    background-color: ${props => props.theme.bgColor.primary};
     
 `
 
 export const TabArea = styled.View`
-    background-color: ${stylesGuide.bg.Secondy};
-    border-radius: 20px;
+    background-color:  ${props => props.theme.bgColor.secundary};
+    border-radius: 10px;
     margin: 10px;
     height: 60px;
     flex-direction: row;
@@ -25,10 +25,10 @@ export const TabItem = styled.TouchableOpacity`
 `;
 
 export const ItemText = styled.Text`
-    color: ${stylesGuide.colors.secondy};
+    color: ${props => props.active ? props.theme.colors.active : props.theme.colors.primary};
 `;
 
 export const ItemImg = styled.Image`
-    widht: 25px;
-    height: 25px;
+    width: 35px;
+    height: 20px;
 `;

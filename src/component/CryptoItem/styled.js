@@ -5,7 +5,7 @@ import stylesGuide from "../../../stylesGuide";
 export const CryptoArea = styled.TouchableOpacity`
     flex-direction: row;
     borderBottomWidth: 1px;
-    borderColor: rgba(255,255,255, 0.2);
+    borderColor: rga(255,255,255,0.4);
     padding: 20px 5px;
     padding-bottom: 5px;
     justify-content: space-between;
@@ -44,7 +44,7 @@ export const InfoLabelArea = styled.View`
 export const Title = styled.Text`
     font-size: 14px;
     font-weight: bold;
-    color: #FFF;
+    color: ${props => props.theme.colors.primary};
 `
 export const Cod = styled.Text`
     color: ${stylesGuide.colors.secondy}

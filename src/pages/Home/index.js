@@ -16,7 +16,8 @@ import {
     HomeContentArea,
     HomeResumeArea,
     AddItem, 
-    HeaderUserImg
+    HeaderUserImg,
+    ItemText
 } from './styled';
 
 import CryptoItem from "../../component/CryptoItem";
@@ -101,7 +102,7 @@ export default () => {
                             ))
                         }
 
-                        <AddItem><Text style={{ color: '#FFF', fontSize: 18 }}>Add To Favorite</Text></AddItem>
+                        <AddItem><ItemText>Add to Favorite</ItemText></AddItem>
                     </HomeResumeArea>
                 </ScrollView>
             </HomeContentArea>

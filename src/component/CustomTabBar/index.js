@@ -16,7 +16,7 @@ export default () => {
             <TabArea>
                 <TabItem>
                     <ItemImg source={require("../../assets/img/buttons/HomeActive.png")} />
-                    <ItemText style={{color: '#FFF'}}>Home</ItemText>
+                    <ItemText active={true}>Home</ItemText>
                 </TabItem>
                 <TabItem>
                     <ItemImg source={require("../../assets/img/buttons/MarketDefault.png")} />
