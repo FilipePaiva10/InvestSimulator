@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/core";
 import { useLayoutEffect } from "react";
 
@@ -25,13 +25,12 @@ import ThemeSwitcher from "../../component/ThemeSwitcher";
 
 import useApi from '../../api';
 
+
 export default () => {
 
     const api = useApi();
 
     const navigation = useNavigation();
-
-    const [theme, setTheme] = useState("Dark");
     
     const [resumeCryptos, setResumeCryptos] = useState([]);
 

@@ -17,6 +17,7 @@ export default () => {
   const [theme, setTheme] = useState(themeDefault);
 
   return (
+
     <ThemeProvider theme={theme}>
       <NavigationContainer>
         <MainStack />

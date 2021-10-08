@@ -5,7 +5,7 @@ import stylesGuide from "../../../stylesGuide";
 export const CryptoArea = styled.TouchableOpacity`
     flex-direction: row;
     borderBottomWidth: 1px;
-    borderColor: rga(255,255,255,0.4);
+    borderColor: #777;
     padding: 20px 5px;
     padding-bottom: 5px;
     justify-content: space-between;
